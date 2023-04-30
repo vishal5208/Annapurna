@@ -1,0 +1,110 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: auto;
+	padding: auto;
+	position: fixed;
+	top: 0;
+	left: 30px;
+	right: 30px;
+	border-radius: 20px;
+}
+
+.header-name {
+	font-weight: bold;
+	font-size: 30px;
+	padding: 8px;
+}
+
+.search-bar-div {
+	position: relative;
+}
+
+.search-button {
+	position: absolute;
+	right: 8px;
+	bottom: 1px;
+	height: 37px;
+	border-radius: 10px;
+	border: none;
+	background-color: white;
+}
+
+.search-img {
+	height: 20px;
+}
+
+.right-section {
+	display: flex;
+	align-items: center;
+}
+
+.login-button {
+	color: black;
+	font-weight: bold;
+	background-color: transparent;
+	border-radius: 4px;
+	padding: 10px 20px;
+	position: relative;
+	margin-right: 20px;
+	cursor: grab;
+}
+
+.inside-login-button-div {
+	display: none;
+	position: absolute;
+	top: 56px;
+	left: -50%;
+	background-color: transparent;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.login-button:hover + .inside-login-button-div,
+.inside-login-button-div:hover {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Style the sub-menu buttons */
+.inside-login-button-div button {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 8px 16px;
+	margin-right: 10px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.inside-login-button-div button:last-child {
+	margin-right: 0;
+}
+
+.b1-div,
+.b2-div {
+	position: relative;
+}
+
+.colorful-button {
+	display: inline-block;
+	padding: 10px 20px;
+	border-radius: 25px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 2px;
+	transition: all 0.3s ease;
+	background: linear-gradient(to right, #0077c2, #3e64af, #6c519e);
+	cursor: pointer;
+}
+
+.colorful-button:hover {
+	transform: scale(1.1);
+}
