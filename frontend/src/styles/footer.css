@@ -1,0 +1,18 @@
+.main-footer {
+	position: fixed;
+	left: 60px;
+	bottom: 2px;
+	right: 60px;
+	text-align: center;
+	height: 20px;
+	padding: 20px;
+}
+
+.main-footer p {
+	position: absolute;
+	left: 50%;
+	font-size: 25px;
+	transform: translate(-50%, -50%);
+	color: black;
+	font-weight: bold;
+}

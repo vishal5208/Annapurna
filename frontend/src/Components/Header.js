@@ -31,7 +31,7 @@ const Header = () => {
 	};
 
 	return (
-		<div className="header">
+		<header className="header">
 			<p className="header-name">Annapurna</p>
 
 			<div className="search-bar-div">
@@ -82,7 +82,7 @@ const Header = () => {
 					onSubmit={handleCustomerModalSubmit}
 				/>
 			)}
-		</div>
+		</header>
 	);
 };
 

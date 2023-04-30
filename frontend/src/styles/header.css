@@ -43,6 +43,7 @@
 .login-button {
 	color: black;
 	font-weight: bold;
+	font-size: 20px;
 	background-color: transparent;
 	border-radius: 4px;
 	padding: 10px 20px;
