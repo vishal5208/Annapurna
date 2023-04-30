@@ -9,6 +9,7 @@
 	left: 30px;
 	right: 30px;
 	border-radius: 20px;
+	z-index: 10002;
 }
 
 .header-name {

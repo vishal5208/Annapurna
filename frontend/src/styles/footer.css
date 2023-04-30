@@ -6,6 +6,7 @@
 	text-align: center;
 	height: 20px;
 	padding: 20px;
+	z-index: 10002;
 }
 
 .main-footer p {
