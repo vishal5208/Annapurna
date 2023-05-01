@@ -1,19 +1,29 @@
 import f1 from "../demoImages/1.avif";
 import "../styles/foodCard.css";
+import starIcon from "../icons/star.svg";
 
 const FoodCard = () => {
 	return (
-		<div className="main-box">
-			<div className="image-div">
-				<img src={f1} alt="food" />
+		<div className="main-food-card-div">
+			{/* food-iamge  */}
+			<div class="image-time-container">
+				<img class="food-image" src={f1} alt="pizza" />
 			</div>
-			<div className="food-details">
-				<p>Ovenstory Pizza</p>
-				<p>$40</p>
-			</div>
-			<div className="hotel-details">
-				<p>Krishnan hotel</p>
-				<p>4.0</p>
+
+			{/* about hote and food*/}
+			<div className="food-hotel">
+				<div className="hotel-details">
+					<p className="hotel-name">Hotel Krishnan</p>
+					<div className="rating">
+						<img src={starIcon} alt="star" />
+						<p>4.0</p>
+					</div>
+				</div>
+
+				<div className="food-details">
+					<p className="food-name">Pizza</p>
+					<p className="price">&#x20B9;30</p>
+				</div>
 			</div>
 		</div>
 	);

@@ -2,14 +2,14 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: auto;
-	padding: auto;
 	position: fixed;
 	top: 0;
-	left: 30px;
-	right: 30px;
+	left: 0;
+	right: 0;
+	height: 60px;
 	border-radius: 20px;
-	z-index: 10002;
+	background-color: #f2f2f2;
+	z-index: 100;
 }
 
 .header-name {
@@ -49,7 +49,7 @@
 	border-radius: 4px;
 	padding: 10px 20px;
 	position: relative;
-	margin-right: 20px;
+	margin-right: 10px;
 	cursor: grab;
 }
 

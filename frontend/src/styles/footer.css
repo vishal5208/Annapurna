@@ -1,19 +1,16 @@
 .main-footer {
-	position: fixed;
-	left: 60px;
-	bottom: 2px;
-	right: 60px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 60px;
+	background-color: #f2f2f2;
+	color: black;
 	text-align: center;
-	height: 20px;
-	padding: 20px;
-	z-index: 10002;
+	z-index: 100;
+	border-radius: 20px;
 }
 
 .main-footer p {
-	position: absolute;
-	left: 50%;
-	font-size: 25px;
-	transform: translate(-50%, -50%);
-	color: black;
-	font-weight: bold;
+	font-size: 20px;
 }
