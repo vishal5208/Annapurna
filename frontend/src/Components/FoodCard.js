@@ -6,8 +6,8 @@ const FoodCard = () => {
 	return (
 		<div className="main-food-card-div">
 			{/* food-iamge  */}
-			<div class="image-time-container">
-				<img class="food-image" src={f1} alt="pizza" />
+			<div className="image-time-container">
+				<img className="food-image" src={f1} alt="pizza" />
 			</div>
 
 			{/* about hote and food*/}

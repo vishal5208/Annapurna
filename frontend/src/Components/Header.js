@@ -3,6 +3,7 @@ import { Input } from "@web3uikit/core";
 import { ConnectButton } from "@web3uikit/web3";
 import HotelSignUpModal from "./HotelSignUpModal";
 import CustomerSignUpModal from "./CustomerSignUpModal";
+import { useHistory } from "react-router-dom";
 
 import "../styles/header.css";
 
@@ -30,6 +31,18 @@ const Header = () => {
 		setShowCustomerlModal(false);
 	};
 
+	const history = useHistory();
+
+	const handleDashboardClick = () => {
+		history.push("/dashboard");
+		window.location.reload(false);
+	};
+
+	const handleHomeClick = () => {
+		history.push("/");
+		window.location.reload(false);
+	};
+
 	return (
 		<header className="header">
 			<p className="header-name">Annapurna</p>
@@ -48,6 +61,16 @@ const Header = () => {
 			</div>
 
 			<div className="right-section">
+				{/* Home */}
+				<button className="dashboard-btn" onClick={handleHomeClick}>
+					Home
+				</button>
+
+				{/* dashboard */}
+				<button className="dashboard-btn" onClick={handleDashboardClick}>
+					Dashboard
+				</button>
+
 				<div className="b1-div">
 					<p className="login-button">Sign up</p>
 					<div className="inside-login-button-div">

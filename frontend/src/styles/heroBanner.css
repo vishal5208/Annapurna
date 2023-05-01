@@ -4,10 +4,15 @@
 	justify-content: center;
 	position: relative;
 	height: 500px;
+	background-image: url("../demoImages/body-back.jpg");
+	background-size: cover;
+	background-position: center;
 }
 
 .hero-banner p {
 	font-weight: bolder;
+	margin-bottom: 20px;
+	color: #1a2a6c;
 	font-size: 30px;
 }
 
@@ -19,6 +24,6 @@
 }
 
 .eye-image-div img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }
