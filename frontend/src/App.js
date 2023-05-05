@@ -5,7 +5,7 @@ import FoodGrid from "./Components/FoodGrid";
 import Dashboard from "./Components/Dashboard";
 import "./App.css";
 
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
 	const name = "Vishal";
@@ -14,19 +14,17 @@ function App() {
 
 	return (
 		<div className="main-container">
-			<Switch>
-				<Route exact path="/">
-					<Header />
-					<HeroBanner />
-					<FoodGrid />
-					<Footer />
-				</Route>
+			<Routes>
 				<Route
-					exact
-					path="/dashboard"
-					render={() => <Dashboard name={name} email={email} phone={phone} />}
+					path="/"
+					element={[<Header />, <HeroBanner />, <FoodGrid />, <Footer />]}
 				/>
-			</Switch>
+
+				<Route
+					path="/dashboard"
+					element={<Dashboard name={name} email={email} phone={phone} />}
+				/>
+			</Routes>
 		</div>
 	);
 }

@@ -14,3 +14,19 @@
 .hotel-owner-details p {
 	margin-bottom: 10px;
 }
+
+.add-food-button {
+	background-color: blue;
+	color: white;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.latest-food-added-flex {
+	display: flex;
+}
+
+.main-body {
+	padding: 10px;
+}

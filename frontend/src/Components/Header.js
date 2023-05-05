@@ -3,13 +3,14 @@ import { Input } from "@web3uikit/core";
 import { ConnectButton } from "@web3uikit/web3";
 import HotelSignUpModal from "./HotelSignUpModal";
 import CustomerSignUpModal from "./CustomerSignUpModal";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/header.css";
 
 const Header = () => {
 	const [showHotelModal, setShowHotelModal] = useState(false);
 	const [showHCustomerModal, setShowCustomerlModal] = useState(false);
+	const navigate = useNavigate();
 
 	const handleHotelModalClose = () => {
 		setShowHotelModal(false);
@@ -31,21 +32,19 @@ const Header = () => {
 		setShowCustomerlModal(false);
 	};
 
-	const history = useHistory();
-
 	const handleDashboardClick = () => {
-		history.push("/dashboard");
-		window.location.reload(false);
+		navigate("/dashboard");
 	};
 
 	const handleHomeClick = () => {
-		history.push("/");
-		window.location.reload(false);
+		navigate("/");
 	};
 
 	return (
 		<header className="header">
-			<p className="header-name">Annapurna</p>
+			<p className="header-name" onClick={handleHomeClick}>
+				Annapurna
+			</p>
 
 			<div className="search-bar-div">
 				<Input
