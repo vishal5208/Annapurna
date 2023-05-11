@@ -45,14 +45,25 @@ async function main() {
 		hotelFoodMarketplace.address
 	);
 
-	// Write contract addresses to file
+	// Get contract ABIs
+	const hotelRegistrationAbi = HotelRegistration.interface.format("json");
+	const customerRegistrationAbi = CustomerRegistration.interface.format("json");
+	const hotelFoodMarketplaceAbi = HotelFoodMarketplace.interface.format("json");
+
+	// Write contract addresses and ABIs to file
 	const contracts = {
-		hotelRegistration: hotelRegistration.address,
-		customerRegistration: customerRegistration.address,
-		hotelFoodMarketplace: hotelFoodMarketplace.address,
+		HotelRegistration: [hotelRegistrationAbi, hotelRegistration.address],
+		CustomerRegistration: [
+			customerRegistrationAbi,
+			customerRegistration.address,
+		],
+		HotelFoodMarketplace: [
+			hotelFoodMarketplaceAbi,
+			hotelFoodMarketplace.address,
+		],
 	};
 	fs.writeFileSync(
-		"contractsAddresses.json",
+		"../frontend/src/Constants/contracts.json",
 		JSON.stringify(contracts, null, 2)
 	);
 }
