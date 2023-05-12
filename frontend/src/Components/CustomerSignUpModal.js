@@ -1,15 +1,26 @@
 import { useState } from "react";
+import { registerCustomer } from "../BackendConnectors/customerRegistrationConnector";
 import "../styles/signup.css";
+let console = require("../console-browserify");
 
 const CustomerSignUpModal = ({ onClose, onSubmit }) => {
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [phoneNumber, setPhoneNumber] = useState("");
 
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const data = { name, email, phoneNumber };
-		onSubmit(data);
+
+		const obj = await registerCustomer({
+			name,
+			email,
+			phoneNumber,
+		});
+
+		if (obj.success) {
+			console.log("mission succesful");
+		}
+		onSubmit();
 	};
 
 	const handleClose = () => {

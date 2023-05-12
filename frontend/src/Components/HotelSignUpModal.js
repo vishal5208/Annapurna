@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../styles/signup.css";
+import { requestHotelRegistration } from "../BackendConnectors/hotelRegistrationConnector";
+let console = require("../console-browserify");
 
 const HotelSignUpModal = ({ onClose, onSubmit }) => {
 	const [name, setName] = useState("");
@@ -7,10 +9,20 @@ const HotelSignUpModal = ({ onClose, onSubmit }) => {
 	const [owner, setOwner] = useState("");
 	const [location, setLocation] = useState("");
 
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const data = { name, description, owner, location };
-		onSubmit(data);
+
+		const obj = await requestHotelRegistration({
+			name,
+			description,
+			owner,
+			location,
+		});
+
+		if (obj.success) {
+			console.log("mission succesful");
+		}
+		onSubmit();
 	};
 
 	const handleClose = () => {

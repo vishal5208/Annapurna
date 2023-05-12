@@ -4,8 +4,9 @@ import { ConnectButton } from "@web3uikit/web3";
 import HotelSignUpModal from "./HotelSignUpModal";
 import CustomerSignUpModal from "./CustomerSignUpModal";
 import { useNavigate } from "react-router-dom";
-
 import "../styles/header.css";
+
+let console = require("../console-browserify");
 
 const Header = () => {
 	const [showHotelModal, setShowHotelModal] = useState(false);
@@ -16,9 +17,7 @@ const Header = () => {
 		setShowHotelModal(false);
 	};
 
-	const handleHotelModalSubmit = (data) => {
-		// Do something with the form data
-		alert(data.name);
+	const handleHotelModalSubmit = async () => {
 		setShowHotelModal(false);
 	};
 
@@ -26,9 +25,7 @@ const Header = () => {
 		setShowCustomerlModal(false);
 	};
 
-	const handleCustomerModalSubmit = (data) => {
-		// Do something with the form data
-		alert(data.name);
+	const handleCustomerModalSubmit = () => {
 		setShowCustomerlModal(false);
 	};
 
