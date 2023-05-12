@@ -11,6 +11,7 @@
     "@web3uikit/web3": "^0.3.2",
     "history": "^4.10.1",
     "loglevel": "^1.8.1",
+    "magic-sdk": "^17.1.4",
     "moralis-v1": "^1.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

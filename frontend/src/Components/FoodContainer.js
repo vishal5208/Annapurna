@@ -1,4 +1,3 @@
-import { useState } from "react";
 import FoodCard from "./FoodCard";
 import "../styles/foodConatiner.css";
 
