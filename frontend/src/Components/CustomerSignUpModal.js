@@ -10,6 +10,7 @@ const CustomerSignUpModal = ({ onClose, onSubmit }) => {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+		onSubmit();
 
 		const obj = await registerCustomer({
 			name,
@@ -18,9 +19,11 @@ const CustomerSignUpModal = ({ onClose, onSubmit }) => {
 		});
 
 		if (obj.success) {
-			console.log("mission succesful");
+			console.log("Customer registerd");
+			alert("You have successfully registered for Annapurna! 🎉");
+		} else {
+			alert("Registration failed");
 		}
-		onSubmit();
 	};
 
 	const handleClose = () => {

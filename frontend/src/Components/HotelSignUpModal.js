@@ -11,6 +11,7 @@ const HotelSignUpModal = ({ onClose, onSubmit }) => {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
+		onSubmit();
 
 		const obj = await requestHotelRegistration({
 			name,
@@ -20,9 +21,13 @@ const HotelSignUpModal = ({ onClose, onSubmit }) => {
 		});
 
 		if (obj.success) {
-			console.log("mission succesful");
+			console.log("request sent to onwer");
+			alert(
+				"Your registration request has been sent! 🚀 The owner will review and approve your request soon"
+			);
+		} else {
+			alert("Registration requet failed");
 		}
-		onSubmit();
 	};
 
 	const handleClose = () => {

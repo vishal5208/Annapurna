@@ -1,5 +1,45 @@
 const { ethers } = require("ethers");
 
+export const isConnected = async () => {
+	try {
+		if (window.ethereum) {
+			let chainId = window.ethereum.chainId;
+			if (chainId !== "0x7A69") {
+				await window.provider.request({
+					method: "wallet_switchEthereumChain",
+					params: [{ chainId: "0x7A69" }], // chainId must be in hexadecimal numbers
+				});
+			}
+			if (chainId === "0x7A69") {
+				const provider = new ethers.providers.Web3Provider(window.ethereum);
+				const account = await provider.send("eth_requestAccounts", []);
+
+				if (account.length > 0) {
+					return {
+						success: true,
+					};
+				}
+
+				return {
+					success: false,
+					msg: "no accounts found",
+				};
+			}
+		} else {
+			localStorage.setItem("Wallet-Check", false);
+			return {
+				success: false,
+				msg: "Please Install Wallet",
+			};
+		}
+	} catch (error) {
+		return {
+			success: false,
+			msg: "Please Open Metamask and Connect",
+		};
+	}
+};
+
 export const getEthAddress = async () => {
 	try {
 		const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
