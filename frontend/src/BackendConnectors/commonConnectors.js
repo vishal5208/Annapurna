@@ -1,16 +1,20 @@
 const { ethers } = require("ethers");
+let console = require("../console-browserify");
+
+const desiredChainId = process.env.REACT_APP_HARDHAT_CHAIN_ID;
+console.log("desired : ", desiredChainId);
 
 export const isConnected = async () => {
 	try {
 		if (window.ethereum) {
 			let chainId = window.ethereum.chainId;
-			if (chainId !== "0x7A69") {
+			if (chainId !== desiredChainId) {
 				await window.provider.request({
 					method: "wallet_switchEthereumChain",
-					params: [{ chainId: "0x7A69" }], // chainId must be in hexadecimal numbers
+					params: [{ chainId: desiredChainId }], // chainId must be in hexadecimal numbers
 				});
 			}
-			if (chainId === "0x7A69") {
+			if (chainId === desiredChainId) {
 				const provider = new ethers.providers.Web3Provider(window.ethereum);
 				const account = await provider.send("eth_requestAccounts", []);
 
@@ -57,7 +61,7 @@ export const getEthAddress = async () => {
 };
 
 export const checkNetwork = async () => {
-	const targetNetworkId = "0x7A69";
+	const targetNetworkId = desiredChainId;
 
 	if (window.ethereum) {
 		const currentChainId = await window.ethereum.request({
@@ -88,7 +92,7 @@ export const requestAccount = async (metaMask) => {
 			}
 			await provider.request({
 				method: "wallet_switchEthereumChain",
-				params: [{ chainId: "0x7A69" }], // chainId must be in hexadecimal numbers
+				params: [{ chainId: desiredChainId }], // chainId must be in hexadecimal numbers
 			});
 			await provider.request({
 				method: "eth_requestAccounts",
