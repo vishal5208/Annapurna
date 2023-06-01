@@ -1,7 +1,7 @@
 const { ethers } = require("ethers");
 let console = require("../console-browserify");
 
-const desiredChainId = process.env.REACT_APP_HARDHAT_CHAIN_ID;
+const desiredChainId = process.env.REACT_APP_MUMBAI_CHAIN_ID;
 
 console.log("desired : ", desiredChainId);
 

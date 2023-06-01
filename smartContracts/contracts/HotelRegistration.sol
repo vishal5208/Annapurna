@@ -62,26 +62,24 @@ contract HotelRegistration {
     function requestHotelRegistration(
         string memory _name,
         string memory _description,
-        address _owner,
         string memory _location
     ) public {
-        require(_owner != address(0), "Invalid owner address");
         require(
-            !hotelRegistrationRequests[_owner],
+            !hotelRegistrationRequests[msg.sender],
             "Registration request already submitted for this address"
         );
 
-        hotels[_owner] = Hotel({
+        hotels[msg.sender] = Hotel({
             name: _name,
             description: _description,
-            owner: _owner,
+            owner: msg.sender,
             location: _location,
             rating: 0,
             numRatings: 0,
             status: HotelRegistrationStatus.Pending
         });
 
-        hotelRegistrationRequests[_owner] = true;
+        hotelRegistrationRequests[msg.sender] = true;
     }
 
     function processHotelRegistration(

@@ -6,7 +6,6 @@ let console = require("../console-browserify");
 const HotelSignUpModal = ({ onClose, onSubmit }) => {
 	const [name, setName] = useState("");
 	const [description, setDescription] = useState("");
-	const [owner, setOwner] = useState("");
 	const [location, setLocation] = useState("");
 
 	const handleSubmit = async (event) => {
@@ -16,7 +15,6 @@ const HotelSignUpModal = ({ onClose, onSubmit }) => {
 		const obj = await requestHotelRegistration({
 			name,
 			description,
-			owner,
 			location,
 		});
 
@@ -69,20 +67,6 @@ const HotelSignUpModal = ({ onClose, onSubmit }) => {
 								className="modal-input"
 								value={description}
 								onChange={(event) => setDescription(event.target.value)}
-								required
-							/>
-						</div>
-						<div className="form-group">
-							<label htmlFor="owner" className="modal-label">
-								Owner:
-							</label>
-							<input
-								type="text"
-								id="owner"
-								placeholder="wallet address"
-								className="modal-input"
-								value={owner}
-								onChange={(event) => setOwner(event.target.value)}
 								required
 							/>
 						</div>
